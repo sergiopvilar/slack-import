@@ -25,7 +25,9 @@ def invite(email)
   }}
 
   response = HTTParty.post("https://#{@org}.slack.com/api/users.admin.invite", options)
+  puts email
   puts response.body, response.code
+  puts "---"
 
 end
 
