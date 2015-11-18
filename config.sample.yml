@@ -1,3 +1,4 @@
-token: some-token
+token_from: some-token
+token_to: some-token
 org: grudepb
 channel: paraibajs

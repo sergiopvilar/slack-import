@@ -5,7 +5,7 @@ require "httparty"
 @_config = YAML.load_file("config.yml")
 @org = @_config["org"]
 Slack.configure do |config|
-  config.token = @_config["token"]
+  config.token = @_config["token_from"]
 end
 
 api = Slack::API.new
@@ -18,7 +18,7 @@ def invite(email)
 
   options = { :body => {
     :email => email,
-    :token => @_config["token"],
+    :token => @_config["token_to"],
     :channels => @channels[@_config["channel"]],
     # :ultra_restricted => 1,
     :set_active => true
